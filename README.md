@@ -33,7 +33,7 @@ e.g   if not os.path.exists('/Users/leon/vehicle_photos/truck'):
 e.g  urlretrieve(i, "/Users/leon/vehicle_photos/truck/"+str(pic_num)+".jpg")
 ```
 
-* The images we are downloading are used as training set. You can randomly choose some other images and download them from Google images as testing set and keep in the same directory.
+* The images we are downloading are used as training set. Now you can randomly choose some other images and download them from Google images as testing set and keep in the same directory for future use.
 
 - After obtaining different classes of dataset, run the **_retrain.py_** to train our model. Run the following command and you can change the target training dataset to whatever you want. I chose **vechicle_photos** for the following example. My sample flower_photo folder contains different classes folders of **car**, **SUV** and **truck**.
 ```
