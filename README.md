@@ -1,12 +1,13 @@
 # deepLearning
+**HELLO! THIS IS LEYANG SHEN**
 
-In this project, we will use TensorFlow (or any tool you prefer) to recognize between two classes of objects. These classes could be: Cars and Trucks or Cars and SUVs, Roses and Sunflowers or Vegetables
+In this project, I will use two approaches to recognize between two classes of objects. These classes could be: Cars and Trucks or Cars and SUVs, Roses and Sunflowers or Vegetables
 
 ## Preface
 
-I used MacOS as my developing environment. Things may be subject to change in Windows or other operating systems.
+I used MacOS as my developing environment. Things may be subject to change in Windows or other operating systems. I designed two different systems to train the data with two different accuracies. The first approach is to use TensorFlow Hub to ingest trained pieces of models, or modules as they are called. The second apporach is to construct a model by building convolutional nerual network. 
 
-
+**First Approach**
 
 ### Installing and Instruction
 
@@ -58,6 +59,7 @@ To change the test images to whatever you want, all you need is to change the pa
 ```
 **Running the tests:**
 ```
+2018-10-20 13:03:42.703097: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
 truck 0.99930465
 car 0.00049284665
 suv 0.00020254114
@@ -68,6 +70,52 @@ suv 0.00020254114
 ![Alt text](https://github.com/leonshen95/deepLearning/blob/master/1.jpg?raw=true)
 **Success!The image is indeed a truck.**
 
+
+
+**Second Approach**
+
+- The package installation is similar to the first approach.
+
+- Load the **_mini2.py_**. You may change the label name to whatever your target dataset is. In the sample code, you may change **_car_** and **_SUV_** to other two classes. Then you need to rename the rest in the following code accordingly
+```
+eg: if word_label == 'car':
+        return np.array([1,0])
+    elif word_label == 'SUV':
+        return np.array([0,1])
+  
+```
+- By this approach, we keep the data of each training and testing image by classes in array and store in the file ending with ".npy". 
+
+- In this part, the 500 images will be extracted from trainning set and used as validation set
+```
+train = train_data[:-500]
+test = train_data[-500:]
+```
+
+- Then we build the cnn(convolutional neural network). I used Adam as my optimizer.
+```
+convnet = input_data(shape=[None, IMG_SIZE, IMG_SIZE, 1], name='input')
+convnet = conv_2d(convnet, 32, 5, activation='relu')
+convnet = max_pool_2d(convnet, 5)
+convnet = conv_2d(convnet, 64, 5, activation='relu')
+convnet = max_pool_2d(convnet, 5)
+convnet = conv_2d(convnet, 128, 5, activation='relu')
+convnet = max_pool_2d(convnet, 5)
+convnet = conv_2d(convnet, 64, 5, activation='relu')
+convnet = max_pool_2d(convnet, 5)
+convnet = conv_2d(convnet, 32, 5, activation='relu')
+convnet = max_pool_2d(convnet, 5)
+convnet = fully_connected(convnet, 1024, activation='relu')
+convnet = dropout(convnet, 0.8)
+convnet = fully_connected(convnet, 2, activation='softmax')
+convnet = regression(convnet, optimizer='adam', learning_rate=LR, loss='categorical_crossentropy', name='targets')
+model = tflearn.DNN(convnet, tensorboard_dir='log', tensorboard_verbose=0)
+model.fit({'input': X_train}, {'targets': y_train}, n_epoch=10,
+          validation_set=({'input': X_test}, {'targets': y_test}),
+          snapshot_step=500, show_metric=True, run_id=MODEL_NAME)
+```
+
+- And finally I randomly chose 16 images from testing set to test. Plot the graph to show the results.
 
 
 **Please let me know if you have any question. Thanks!**
