@@ -1,6 +1,6 @@
 # deepLearning
 
-In this project, we will use TensorFlow (or any tool you prefer) to recognize between two classes of objects. These classes could be: Cars and Trucks or Cars and SUVs Roses and Sunflowers or Vegetables
+In this project, we will use TensorFlow (or any tool you prefer) to recognize between two classes of objects. These classes could be: Cars and Trucks or Cars and SUVs, Roses and Sunflowers or Vegetables
 
 ## Preface
 
@@ -15,7 +15,7 @@ I used MacOS as my developing environment. Things may be subject to change in Wi
 - First, install tensorflow and tensorflow_hub by:
 
 ```
--pip3 install tensorflow
+- pip3 install tensorflow
 ```
 
 And repeat for tensorflow_hub and any other packages that may be needed for the future. 
