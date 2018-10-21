@@ -63,8 +63,11 @@ car 0.00049284665
 suv 0.00020254114
 ```
 
+**And what was the image we just used to test?**
+
+![Alt text](https://github.com/leonshen95/deepLearning/blob/master/1.jpg?raw=true)
 **Success!The image is indeed a truck.**
 
 
 
-**Let me know if you have any question. Thanks!**
+**Please let me know if you have any question. Thanks!**
