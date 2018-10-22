@@ -21,7 +21,7 @@ I used MacOS as my developing environment. Things may be subject to change in Wi
 
 And repeat for tensorflow_hub and any other packages that may be needed for the future. 
 
-- Use **_image_Download.py_** to download dataset for any specific class. You can also use [Kaggle](https://www.kaggle.com/) or any other images websites to get the dataset ready. Dataset of different classes will be the core to train our model. For this project, I chose [ImageNet](http://www.image-net.org/) to download dataset because it is much easier to comprehend and download.  
+- Use **_image_Download.py_** to download dataset for any specific class from [ImageNet](http://www.image-net.org/). You can also use [Kaggle](https://www.kaggle.com/) or any other images websites to get the dataset ready. Dataset of different classes will be the core to train our model. For this project, I chose [ImageNet](http://www.image-net.org/) because it is more intuitive and much easier to download.  
 
 You can change the URL to whatever dataset you want to download. 
 ```
@@ -29,9 +29,9 @@ url = 'http://www.image-net.org/api/text/imagenet.synset.geturls?wnid=n04490091'
 ```
 Also you can change the path where downloaded images will be stored and rename them accordingly.
 ```
-e.g   if not os.path.exists('/Users/leon/vehicle_photos/truck'):
+e.g if not os.path.exists('/Users/leon/vehicle_photos/truck'):
         os.makedirs('/Users/leon/vehicle_photos/truck')
-e.g  urlretrieve(i, "/Users/leon/vehicle_photos/truck/"+str(pic_num)+".jpg")
+    urlretrieve(i, "/Users/leon/vehicle_photos/truck/"+str(pic_num)+".jpg")
 ```
 
 * The images we are downloading are used as training set. Now you can randomly choose some other images and download them from Google images as testing set and keep in the same directory for future use.
@@ -57,7 +57,9 @@ To change the test images to whatever you want, all you need is to change the pa
 ```
 --image=PATH of the image
 ```
-**Running the tests:**
+**Running the tests:** 
+
+You should see someting like this:
 ```
 2018-10-20 13:03:42.703097: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
 truck 0.99930465
@@ -72,7 +74,7 @@ suv 0.00020254114
 
 
 
-**Second Approach**
+**Second Approach** 
 
 - The package installation is similar to the first approach.
 
@@ -97,9 +99,11 @@ test = train_data[-500:]
 
 - And finally I randomly chose 16 images from testing set to test. Plot the graph to show the results.
 
+You should see someting like this:
+
 ![Alt text](https://github.com/leonshen95/deepLearning/blob/master/test.jpeg?raw=true)
 
 
-**_As we can see, there are several mistakes in the result. Thus after comparsion, the first approach has higher accuracy._**
+**_As we can see, there are actually several mistakes in the result. Thus after comparsion, the first approach has higher accuracy._**
 
 **Please let me know if you have any question. Thanks!**
