@@ -93,29 +93,13 @@ test = train_data[-500:]
 ```
 
 - Then we build the cnn(convolutional neural network). I used Adam as my optimizer.
-```
-convnet = input_data(shape=[None, IMG_SIZE, IMG_SIZE, 1], name='input')
-convnet = conv_2d(convnet, 32, 5, activation='relu')
-convnet = max_pool_2d(convnet, 5)
-convnet = conv_2d(convnet, 64, 5, activation='relu')
-convnet = max_pool_2d(convnet, 5)
-convnet = conv_2d(convnet, 128, 5, activation='relu')
-convnet = max_pool_2d(convnet, 5)
-convnet = conv_2d(convnet, 64, 5, activation='relu')
-convnet = max_pool_2d(convnet, 5)
-convnet = conv_2d(convnet, 32, 5, activation='relu')
-convnet = max_pool_2d(convnet, 5)
-convnet = fully_connected(convnet, 1024, activation='relu')
-convnet = dropout(convnet, 0.8)
-convnet = fully_connected(convnet, 2, activation='softmax')
-convnet = regression(convnet, optimizer='adam', learning_rate=LR, loss='categorical_crossentropy', name='targets')
-model = tflearn.DNN(convnet, tensorboard_dir='log', tensorboard_verbose=0)
-model.fit({'input': X_train}, {'targets': y_train}, n_epoch=10,
-          validation_set=({'input': X_test}, {'targets': y_test}),
-          snapshot_step=500, show_metric=True, run_id=MODEL_NAME)
-```
+
 
 - And finally I randomly chose 16 images from testing set to test. Plot the graph to show the results.
 
+![Alt text](https://github.com/leonshen95/deepLearning/blob/master/test.jpeg?raw=true)
+
+
+**_As we can see, there are several mistakes in the result. Thus after comparsion, the first approach has higher accuracy._**
 
 **Please let me know if you have any question. Thanks!**
