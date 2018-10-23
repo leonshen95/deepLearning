@@ -11,9 +11,9 @@ I used MacOS as my developing environment. Things may be subject to change in Wi
 
 ### Installing and Instruction
 
-- Download all the files. You may save the files in the same directory. Otherwise, you need to change the file path accordingly in the following step.
+- Download all the files. You may save them in the same directory. Otherwise, you need to change the file path accordingly in the following steps.
 
-- First, install tensorflow and tensorflow_hub by:
+- First, install **tensorflow** by:
 
 ```
 - pip3 install tensorflow
@@ -23,7 +23,7 @@ And repeat for tensorflow_hub and any other packages that may be needed for the 
 
 - Use **_image_Download.py_** to download dataset for any specific class from [ImageNet](http://www.image-net.org/). You can also use [Kaggle](https://www.kaggle.com/) or any other images websites to get the dataset ready. Dataset of different classes will be the core to train our model. For this project, I chose [ImageNet](http://www.image-net.org/) because it is more intuitive and much easier to download.  
 
-You can change the URL to whatever dataset you want to download. 
+In Python file, you can change the URL to whatever dataset you want to download. 
 ```
 url = 'http://www.image-net.org/api/text/imagenet.synset.geturls?wnid=n04490091';
 ```
