@@ -5,7 +5,7 @@ In this project, I will use two approaches to recognize between at least two cla
 
 ## Preface
 
-I used MacOS as my developing environment. Things may be subject to change in Windows or other operating systems. I designed two different systems to train the data with two different accuracies. The first approach is to use TensorFlow Hub to ingest trained pieces of models, or modules as they are called. The second apporach is to construct a model by building convolutional nerual network. 
+I used MacOS as my developing environment. Things may be subject to change in Windows or other operating systems. I designed two different systems to train the data with two different accuracies. The first approach is inception V3 architecture trained on ImageNet that uses TensorFlow Hub to ingest trained pieces of models, or modules as they are called. The second apporach is to build convolutional nerual network by max pooling and activated by relu. 
 
 **First Approach**
 
