@@ -1,7 +1,7 @@
 # deepLearning
 **HELLO! THIS IS LEYANG SHEN**
 
-In this project, I will use two approaches to recognize between two classes of objects. These classes could be: Cars and Trucks or Cars and SUVs, Roses and Sunflowers or Vegetables
+In this project, I will use two approaches to recognize between at least two classes of objects. These classes could be: Cars and Trucks or Cars and SUVs, Roses and Sunflowers or Vegetables
 
 ## Preface
 
